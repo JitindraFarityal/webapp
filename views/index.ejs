@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web App</title>
+    </head>    
+    <body>
+ 
+        <div class="container-fluid">
+            <h2>CRUD Operation using Node.JS, MongoDB and Express.JS as MVC framework</h2>      
+            <div class="row" style="padding-left:20px;">
+                <div class="col-md-4">
+                    <h3>INSERT in the database</h3>
+                    <form action="/insert" method="post">
+                        Student ID   : <input type="text" id="studentId" name="studentId">
+                        <br>
+                        Student Name :<input type="text" id="studentName" name="studentName">
+                        <br>
+                        <input type="submit" value="INSERT"/>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <h3>LOAD the data</h3>
+                    <ul>
+                       <% resultArray.forEach(function(value)
+                           {
+                             %><li><%= value.studentId %> <%= value.studentName %></li><% 
+                           });
+                        %>
+                    </ul>
+                    <form action="/load" method="POST">
+                        <input type="submit" value="LOAD"/>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h3>UPDATE the database </h3>
+                    <form action="/update" method="POST">
+                        Student ID   : <input type="text" name="studentId"></input>
+                        <br>
+                        New Student Name :<input type="text" name="studentName"></input>
+                        <br>
+                        <input type="submit" name="UPDATE"></input>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h3>DELETE the data</h3>
+                    <form action="/delete" method="POST">
+                        Student ID   : <input type="text" name="studentId"></input>
+                        <br>
+                        <input type="submit" name="DELETE"></input>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+</html>
+
